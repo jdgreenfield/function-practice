@@ -39,9 +39,22 @@
           ]
         });
 				
-				function reverseText(text){
+				function reverseText(text) {
+					// return null if empty
+					if(text === null){
+						return null;
+					}
+					// make an empty string
+					var reversed = '';
+					// loop backwards over text
+					for(var index = text.length - 1; index >= 0; index--) { 
+						
+					// append character to new text
+						reversed += text[index];
+					}
+					return reversed;
 				}
-
+					
         createExample('Reverse Text', {
           description: 'Create a function that reverses the characters in \
             a string',
@@ -56,11 +69,13 @@
               output: null
             },
             {
-              input: 'one two three',
-              output: 'eerht owt eno'
+              input: '',
+              output: ''
             }
           ]
         });
+				
+				
 
         createExample('Tender Change', {
           description: 'Write a function that given a dollar amount returns \
