@@ -75,8 +75,97 @@
           ]
         });
 				
-				function tenderChange(){
-					// list of denominations & values
+				
+
+				function tenderChange(amount){
+					var change = {
+						twenties: 0,
+						tens: 0,
+            fives: 0,
+            ones: 0,
+						quarters: 0,
+            dimes: 0,
+						nickels: 0,
+            pennies: 0,
+          };
+
+          var bills = 0
+          var coins = 0
+
+          if (amount>=0) {
+						
+						bills = Math.floor(amount);
+						coins = Math.floor((amount - bills)%1*100
+						change.twenties = Math.floor (bills/20)
+						change.tens = Math.floor(bills(change.twenties * 20))/10
+            change.fives = Math.floor(bills(change.twenties * 20)) - (change.tens*10)/5
+            bills = amount - (change.fives * 5);
+            change.ones = bills % 5;
+            change.quarters = Math.floor (coins/25);
+            change.dimes = Math.floor((coins- (coins/25) * 10)) / 5;
+						change.nickels = Math.floor((coins - (change.quarters * 25) - (change.dimes * 10))) / 5;
+            change.pennies = coins % 10;
+          }
+          return change
+        };
+
+				/*	var amount = '';
+					var = workingNumber
+					// take number multiply by 100
+					function removeDecimal (amount){
+						amount * 100 = workingNumber
+						
+						
+					}
+					// list of denominations and declare values, 2 arrays
+					var denominationsDollars = [ 
+						{name : 'hundreds', value: 10000};
+						{name : 'fifties', value: 5000};
+						{name : 'twenties', value: 2000};
+						{name : 'tens', value: 1000};
+						{name : 'fives', value: 500};
+						{name : 'ones', value:100};
+						{name : 'quarters', value: 25};
+						{name : 'dimes', value: 10};
+						{name : 'nickels', value: 5};
+						{name : 'pennies', value: 1};
+					]
+				
+					//	
+					// begin with numbers to the left of the decimal -- the dollars
+					// will start with the number that the amount is less than 1000
+					// is the number less than 100?
+					// if not subtract 100 from the overall amount and add one to the 100's counting pile
+					// loop through until the number is less than 100
+					// is the number less than 50?
+					// if not subtract from the number and add 50 to the counting pile
+					// loop through until the number is less than 50
+					// is the number less than 20?
+					// if not subtract the number and add one 20 to the counting pile
+					// loop through until the number is less than 20
+					// is the number less than 10?
+					// if not subtract the number from the total and add one 10 to counting pile
+					// loop through until the number is less than 10
+					// is the number less than 5?
+					// if not then subtract the number from the total and add one to the counting pile
+					// loop through until the number is less than 5
+					// is the number less than 1?
+					// if not then subtract the number from the amount and add one 1 to the counting pile
+					// loop through until number is less than 1
+					
+					//now on to the cents
+					// is the number less than 25?
+					// if not subtract 25 from the number and add one to the counting pile
+					// loop through until number is less than 25
+					// is the number less than 10?
+					// if not subtract 10 from the number and add one to the counting pile
+					// loop through until number is less than 10
+					// is the number less than 5? 
+					// if not then subtract 5 from the number and add one to the counting pile
+					// loop through until the number is less than 5
+					// is the number less than 1?
+					// if not then subtract 1 from the number and add one to the counting pile
+					// loop through until number is less than 1
 					// loop through denominations 
 					// if remainder > denomination
 						// how many of denomination
@@ -84,6 +173,9 @@
 						// update change with denomination
 						// & amount
 					
+				
+				}
+				*/
 				
 				}
 
